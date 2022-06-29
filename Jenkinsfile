@@ -1,6 +1,8 @@
-#!/usr/bin/env groovy
+#!/usr/share/maven groovy
 pipeline {
   agent any
+  tools {
+    maven 'Maven'
   stages {
     stage('build') {
       steps {
