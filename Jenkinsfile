@@ -1,17 +1,8 @@
 #!/usr/bin/env groovy
 pipeline {
   agent any
-  tools {
-    maven 'Maven'
-  }
   stages {
-    stage('test') {
-      steps {
-      script {
-        echo 'testing the app'
-      }
-    }
-  }stage('build') {
+    stage('build') {
       steps {
       script {
         echo 'building the app'
