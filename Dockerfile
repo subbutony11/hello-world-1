@@ -1,5 +1,5 @@
 FROM openjdk:8-jre-alpine
 EXPOSE 8080
-COPY ./target/webapp.war /usr/app/
+COPY ./target/hello-world-1-1.0-SNAPSHOT.jar /usr/app/
 WORKDIR /usr/app
-ENTRYPOINT ["java", "-war", "webapp.war"]
+ENTRYPOINT ["java", "-jar", "hello-world-1-1.0-SNAPSHOT.jar"]
