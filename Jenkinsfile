@@ -7,7 +7,7 @@ pipeline {
         echo 'building the app'
       }
     }
-  }stage('test') {
+  stage('test') {
       steps {
         echo 'testing the app'
       }
@@ -19,3 +19,4 @@ pipeline {
   }
 }
 }
+
