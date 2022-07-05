@@ -23,12 +23,12 @@ pipeline {
         }
       }
                      
-    }            stage('deploy') {
-                            steps {
-                              script {
-                                echo "Deploying the application.."
-                              }
-                            }
-                          }
-                          }
-}
+    }
+    stage('deploy') {
+       steps {
+        script {
+         echo "Deploying the application.."
+        }
+       }
+    }
+  }
