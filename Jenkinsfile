@@ -1,4 +1,4 @@
-#!/usr/share/maven groovy
+def gv
 pipeline {
   agent any
   parameters {
@@ -8,18 +8,28 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'building the app'
+        script {
+          gv.buildapp()
+        }
       }
     }
   stage('test') {
-      steps {
-        echo 'testing the app'
+    when {
+      expression {
+        params.executeTests
       }
     }
+    steps {
+      script {
+        gv.testapp()
+      }
+    }
+  }
   stage('deploy') {
     steps {
-      echo 'deploying the app'
-      echo "deploying version ${params.VERSION}"
+      script {
+        gv.deployapp()
+      }
     }
   }
 }
