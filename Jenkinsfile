@@ -7,7 +7,7 @@ pipeline {
     stage("build jar") {
       steps {
         script {
-          echo "building the application.."
+          echo "building the application..."
           sh 'mvn package'
         }
       }
@@ -15,7 +15,7 @@ pipeline {
     stage("build image") {
       steps {
         script {
-          echo "building the docker image.."
+          echo "building the docker image..."
           withCredentials([usernamePassword(credentialsId: '2d13e999-f0d8-44c3-bc24-e360ced7d2e7', passwordVariable: 'PASS', usernameVariable: 'USER')]){
                        sh 'docker build -t subhashinikuruva/my-repo:redis-2.0 .'
                        sh "echo $PASS | docker login -u $USER --password-stdin"
@@ -27,7 +27,7 @@ pipeline {
     stage("deploy") {
        steps {
         script {
-         echo "Deploying the application.."
+         echo "deploying the application..."
         }
        }
     }
