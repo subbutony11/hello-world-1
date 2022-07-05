@@ -4,15 +4,15 @@ pipeline {
     maven 'maven-3.6'
   }
   stages {
-    stage('build jar') {
+    stage("build jar") {
       steps {
         script {
           echo "building the application.."
-          sh 'mvn package'
+          sh 'maven package'
         }
       }
     }
-    stage('build image') {
+    stage("build image") {
       steps {
         script {
           echo "building the docker image.."
@@ -24,7 +24,7 @@ pipeline {
         }
       }
     }
-    stage('deploy') {
+    stage("deploy") {
        steps {
         script {
          echo "Deploying the application.."
