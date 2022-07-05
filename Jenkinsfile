@@ -20,11 +20,10 @@ pipeline {
                        sh 'docker build -t subhashinikuruva/my-repo:redis-2.0 .'
                          sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
                             sh 'docker push subhashinikuruva/my-repo:redis-2.0'
-                          }
-                          }
-                          }
-                          }
-                          stage('deploy') {
+        }
+      }
+                     
+    }            stage('deploy') {
                             steps {
                               script {
                                 echo "Deploying the application.."
