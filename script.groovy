@@ -9,6 +9,7 @@ def buildimage() {
                        sh "echo $PASS | docker login -u $USER --password-stdin"
                        sh 'docker push subhashinikuruva/my-repo:redis-2.0'
 }
+}
 def deployapp() {
   echo "deploying the application..."
 } 
