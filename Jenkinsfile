@@ -44,8 +44,8 @@ pipeline {
     steps {
       script {
         gv.deployapp()
-        echo "deploying to $(ONE)"
-        echo "deploying to $(TWO)"
+        echo "deploying to ${ONE}"
+        echo "deploying to ${TWO}"
       }
     }
   }
