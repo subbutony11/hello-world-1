@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM redis:1.0
 EXPOSE 8080
 COPY . .
 WORKDIR  . .
