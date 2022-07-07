@@ -15,7 +15,7 @@ def deployapp() {
   docker.withRegistry(
             'https://docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest',
             'ecr:ap-south-1:aws-credentials') {
-             myImage = docker.build('subhashinikuruva/my-repo')
+            def myImage = docker.build('subhashinikuruva/my-repo')
              myImage.push('latest')
           }
   
