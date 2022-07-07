@@ -19,4 +19,5 @@ def deployapp() {
             sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest:""BUILD_ID""'
             }
   
-} 
+}
+return this
