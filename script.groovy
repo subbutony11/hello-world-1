@@ -16,7 +16,7 @@ def deployapp() {
             'https://docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest',
             'ecr:ap-south-1:aws-credentials'){
              subhashinikuruva/my-repo = docker.build('redis')
-            subhashinikuruva/my-repo.push('redis-1.1')
+             subhashinikuruva/my-repo.push('redis-1.1')
           }
   
 } 
