@@ -13,7 +13,7 @@ def buildimage() {
 def deployapp() {
   echo "deploying the application..."
   docker.withRegistry(
-            'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 222882145299.dkr.ecr.ap-south-1.amazonaws.com'
+            'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 222882145299.dkr.ecr.ap-south-1.amazonaws.com',
             'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'){
             def subhashinikuruva/my-repo = docker.build('redis')
             subhashinikuruva/my-repo('docker tag redis:latest 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest')
