@@ -34,8 +34,8 @@ pipeline {
           docker.withRegistry(
             'https://docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest',
             'ecr:ap-south-1:aws-credentials'){
-             redis-1.1 = docker.build('redis')
-             redis-1.1.push('latest')
+             subhashinikuruva/my-repo = docker.build('redis')
+             subhashinikuruva/my-repo.push('latest')
           }
         }
        }
