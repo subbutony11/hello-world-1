@@ -17,6 +17,7 @@ def deployapp() {
             sh 'docker build -t redis .'
             sh 'docker tag redis:latest 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
             sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
+            }
   
 } 
 return this
