@@ -13,7 +13,7 @@ def buildimage() {
 def deployapp() {
   echo "deploying the application.."
   withEnv (["AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID}","AWS_SECRET_ACCESS_KEY=${env.AWS_SECRET_ACCESS_KEY}", "AWS_DEFAULT_REGION=${env.AWS_DEFAULT_REGION}"]){
-            sh 'docker login -u $subhashinikuruva AWS -p $8ab7b2de-4dbe-40c4-8c89-8050832ad417 $(aws ecr get-login-password --region ap-south-1)  222882145299.dkr.ecr.ap-south-1.amazonaws.com' 
+            sh 'docker login -u $subhashinikuruva AWS -p $803b8638-20de-4a86-9ed5-f1fc6b2fc6cf $(aws ecr get-login-password --region ap-south-1)  222882145299.dkr.ecr.ap-south-1.amazonaws.com' 
             sh 'docker build -t redis .'
             sh 'docker tag redis:latest:""$BUILD_ID""'
             sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:""$BUILD_ID""latest'
