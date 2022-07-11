@@ -15,10 +15,10 @@ def deployapp() {
   withEnv (["AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID}","AWS_SECRET_ACCESS_KEY=${env.AWS_SECRET_ACCESS_KEY}", "AWS_DEFAULT_REGION=${env.AWS_DEFAULT_REGION}"]){
             sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 222882145299.dkr.ecr.ap-south-1.amazonaws.com'
             sh 'docker build -t redis .'
-            sh 'aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-                aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-                aws configure set default.region ap-south-1
-                aws configure set default.output json'
+            sh 'aws configure set aws_access_key_id 
+                aws configure set aws_secret_access_key 
+                aws configure set default.region 
+                aws configure set default.output'
             sh 'docker tag redis:latest 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
             sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
             }
