@@ -17,8 +17,8 @@ def deployapp() {
             sh 'eval $(aws ecr get-login --no-include-email --region ap-south-1 | describe-registry)'
             sh 'mv $HOME/.docker/config.json $HOME/.docker/config.json.backup'
             sh 'docker build -t redis .'
-            sh 'docker tag redis:latest 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:1.1'
-            sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:1.1'
+            sh 'docker tag redis:latest 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
+            sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
             }
   
 }
