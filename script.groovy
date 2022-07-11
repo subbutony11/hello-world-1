@@ -16,7 +16,7 @@ def deployapp() {
             sh 'echo docker login -u subhashinikuruva AWS -p Dharani@123  $(aws ecr get-login-password --region ap-south-1)  222882145299.dkr.ecr.ap-south-1.amazonaws.com' 
             sh 'docker build -t redis .'
             sh 'docker tag redis:latest 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
-            sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:""$BUILD_ID""latest'
+            sh 'docker push 222882145299.dkr.ecr.ap-south-1.amazonaws.com/redis:latest'
             }
   
 }
